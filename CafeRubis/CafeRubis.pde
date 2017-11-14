@@ -26,5 +26,35 @@ void printProducts()
   }
 }
 
+void displayProducts()
+{
+  int productLen = products.size();
+  float productHeight = ((height-(borderTopBottom*2))/productLen)-10;
+  float productWidth = 300; 
+    
+  for(Product product:products)
+  {
+    fill(255);
+    stroke(0);
+    rect(borderLeftRight,borderTopBottom,productWidth,productHeight);
+    fill(0);
+    textAlign(LEFT, CENTER);
+    text(product.name, borderLeftRight + 10, borderTopBottom+20); // change the 20
+    textAlign(RIGHT, CENTER);
+    text(nf(product.price,2,2), (borderLeftRight+productWidth), borderTopBottom+20);
+    borderTopBottom += (productHeight+10);
+  }  
+}
+
 ArrayList<Product> products = new ArrayList<Product>();
 ArrayList<Product> bill = new ArrayList<Product>();
+
+int borderTopBottom = 50;
+int borderLeftRight = 30;
+
+void draw()
+{
+  background(60);
+  displayProducts();
+  noLoop();
+}
