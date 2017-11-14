@@ -30,7 +30,7 @@ void displayProducts()
 {
   int productLen = products.size();
   float productHeight = ((height-(borderTopBottom*2))/productLen)-10;
-  float productWidth = 300; 
+  
     
   for(Product product:products)
   {
@@ -46,11 +46,33 @@ void displayProducts()
   }  
 }
 
+/*
+void mousePressed()
+{
+   if(mouseX > borderLeftRight && mouseX < (borderLeftRight+productWidth))
+    {
+      float productHeight = (height-(borderTopBottom*2))/products.size();
+      float productNum = (height-(borderTopBottom*2)/mouseY);
+      int realProductNum = nf(productNum,0,0);
+      Product product = products.get(productNum);
+    }
+  
+  
+  for(int i = 0 ; i < products.size() ; i ++)
+  {
+    Product product = products.get(i);
+    
+    
+    
+  }  
+}
+*/
 ArrayList<Product> products = new ArrayList<Product>();
 ArrayList<Product> bill = new ArrayList<Product>();
 
 int borderTopBottom = 50;
 int borderLeftRight = 30;
+float productWidth = 300; 
 
 void draw()
 {
